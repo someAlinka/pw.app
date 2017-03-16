@@ -1,0 +1,14 @@
+<form action="" id="transact-form" class="transact content__wrapper" ng-controller="TransactionCtrl">
+    <h5 class="main-wrapper__title transact__title">Create transaction</h5>
+    <div class="transact__balance">Your balance is <span id="amonth">{{balance}}</span>pw</div>
+    <div class="field-wrapper">
+        <input type="text" id="transact__email" class="field-wrapper__input" name="email" placeholder="Enter email">
+        <span class="field-wrapper__error">smth wrong</span>
+    </div>
+    <div class="field-wrapper">
+        <input type="text" id="transact__amonth" class="field-wrapper__input" name="amonth" placeholder="Enter summ">
+        <span class="field-wrapper__error">smth wrong</span>
+    </div>
+    <div class="transact-complete">Transaction success.</div>
+    <button id="transact__button" class="transact__button parrot-button" ng-click="transaction($event)">Send</button>
+</form>

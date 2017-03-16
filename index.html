@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" ng-app="pwApp">
+<head>
+    <base href="/" />
+    <meta charset="utf-8">
+    <title>Parrot Wings</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="main-wrapper" ng-controller="ParrotCtrl">
+    <!--Header-->
+    <header class="header" id="header">
+        <a href="/" class="logo header__logo like_button">
+            <img src="img/logo.png" alt="" class="logo__img">
+        </a>
+        <!--Authorization-->
+        <div class="auth header__auth">
+            <span class="auth__link auth__login" id="auth__login" ng-click="togglePopup = !togglePopup">Login</span>
+            <span class="auth__link auth__logout" id="auth__logout" ng-click="logout($event)">Logout</span>
+            <a href="javascript:void(0)" title="Toggle menu" class="toggle-navbar like_button" id="toggle-navbar" ng-click="toggleMenu = !toggleMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+            <div class="popup auth__popup" id="auth__popup" ng-class="{'open-popup' : togglePopup}">
+                <form action="" class="auth__form">
+                    <div class="field-wrapper">
+                        <input type="text" id="login__email" class="field-wrapper__input" name="email" placeholder="Enter email">
+                        <span class="field-wrapper__error">smth wrong</span>
+                    </div>
+                    <div class="field-wrapper">
+                        <input type="text" id="login__password" class="field-wrapper__input" name="password" placeholder="Enter password">
+                        <span class="field-wrapper__error">smth wrong</span>
+                    </div>
+                    <button id="auth__button" class="auth__button" ng-click="login($event)">Sign in</button>
+                    <div class="need-registr">
+                        <span class="need-registr__text">Still New to Parrot Wings?</span>
+                        <a href="/registration" class="need-registr__link" ng-click="closeLoginPopup()">Register now!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Navigation-->
+        <nav class="navbar" id="main-navbar" ng-class="{'open-menu' : toggleMenu}">
+            <span class="navbar__close"><i class="fa fa-times" aria-hidden="true" ng-click="toggleMenu = !toggleMenu"></i></span>
+            <span class="header__greeting" id="header__greeting"></span>
+            <ul class="nav navbar__nav">
+                <li class="nav__li active"><a href="/" class="nav__link">Home</a></li>
+                <li class="nav__li"><a href="/profile" class="nav__link">Profile</a></li>
+                <li class="nav__li"><a href="/transaction" class="nav__link">Transaction</a></li>
+                <li class="nav__li"><a href="/history" class="nav__link">History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Parrot Wings content-->
+    <ng-view class="content"></ng-view>
+    
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer__copyright">&copy; 2017 Parrot Wings</div>
+        <ul class="soc-menu">
+            <li class="soc-menu__li">
+                <a href="javascript:void(0)" class="soc-menu__a">
+                    <i class="fa fa-vk" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="soc-menu__li">
+                <a href="javascript:void(0)" class="soc-menu__a">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="soc-menu__li">
+                <a href="javascript:void(0)" class="soc-menu__a">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="soc-menu__li">
+                <a href="javascript:void(0)" class="soc-menu__a">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/angular.js"></script>
+    <!--Angular.js Route-->
+    <script src="js/angular-route.js"></script>
+    <!--Angular.js Resource-->
+    <script src="js/angular-resource.js"></script>
+    <!--Custom scripts-->
+    <script src="js/global.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/controllers.js"></script>
+</body>
+</html>

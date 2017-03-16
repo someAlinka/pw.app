@@ -1,0 +1,25 @@
+<div id="history-form" class="history content__wrapper" ng-controller="HistoryCtrl">
+    <h5 class="main-wrapper__title transact__title">Your history</h5>
+    <div class="balance">Your balance is <span id="amonth">{{balance}}</span>pw</div>
+    <div class="history__error">You have no transaction history</div>
+    <div class="history__table">
+    	<div class="history__transact-result error">Not enough money in your account.</div>
+    	<div class="history__transact-result ok">Transaction success.</div>
+    	<ul class="history__table-row history__thead">
+    		<li class="history__date" ng-click="sortHistory('transaction_date')">Date</li>
+    		<li class="history__email-sender" ng-click="sortHistory('email_sender')">Sender</li>
+    		<li class="history__email-recipient" ng-click="sortHistory('email_recipient')">Recipient</li>
+    		<li class="history__balance" ng-click="sortHistory('transaction_balance')">Count pw</li>
+    		<li class="history__result" ng-click="sortHistory('result_recipient')">Your account</li>
+    		<li></li>
+    	</ul>
+    	<ul class="history__table-row" ng-repeat="row in history | orderBy:sortField:reverseSort" ng-class="row.email_sender === email? '' : 'recipient'">
+    		<li class="history__date">{{row.transaction_date | date:'dd.MM.yyyy'}}</li>
+    		<li class="history__email-sender">{{row.email_sender === email? 'you' : row.email_sender}}</li>
+    		<li class="history__email-recipient">{{row.email_recipient === email? 'you' : row.email_recipient}}</li>
+    		<li class="history__balance">{{row.transaction_balance}}pw</li>
+    		<li class="history__result">{{row.email_sender === email? row.result_sender : row.result_recipient}}pw</li>
+    		<li><a href="javascript:void(0)" class="button-retry"  ng-click="transaction($event)" ng-hide="row.email_sender !== email">retry</a></li>
+    	</ul>
+    </div>
+</div>

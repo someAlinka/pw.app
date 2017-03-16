@@ -1,0 +1,21 @@
+<form action="" id="register-form" class="register content__wrapper" ng-controller="RegistrationCtrl">
+    <h5 class="main-wrapper__title register__title">Register account</h5>
+    <div class="field-wrapper">
+        <input type="text" id="register__name" class="field-wrapper__input" name="name" placeholder="Enter your name">
+        <span class="field-wrapper__error">smth wrong</span>
+    </div>
+    <div class="field-wrapper">
+        <input type="text" id="register__email" class="field-wrapper__input" name="email" placeholder="Enter email">
+        <span class="field-wrapper__error">smth wrong</span>
+    </div>
+    <div class="field-wrapper">
+        <input type="text" id="register__password" class="field-wrapper__input" name="password" placeholder="Enter password">
+        <span class="field-wrapper__error">smth wrong</span>
+    </div>
+    <div class="field-wrapper">
+        <input type="text" id="register__confirm-password" class="field-wrapper__input" name="confirm-password" placeholder="Confirm your password">
+        <span class="field-wrapper__error">smth wrong</span>
+    </div>
+    <button id="register__button" class="register__button parrot-button" ng-click="register($event)">Sign up</button>
+</form>
+<div id="complete" class="complete content__wrapper main-wrapper_disabled">Thank you for registering, now you can login.</div>

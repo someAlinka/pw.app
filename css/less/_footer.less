@@ -1,0 +1,30 @@
+.footer{
+	flex: 0.1 0 auto;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    color: @light-color;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.soc-menu{
+	.soc-menu__li{
+		display: inline-block;
+		margin: 0 10px;
+	}
+	.soc-menu__a{
+		color: #fff;
+		opacity: 0.5;
+		.transition(opacity, 0.3s);
+		&:hover{
+			opacity: 1;
+		}
+		&:before{
+			display: none;
+		}
+	}
+}

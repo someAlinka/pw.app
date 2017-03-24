@@ -2,10 +2,8 @@
 
 <h4>Небольшое приложение для осуществления переводов виртуальных денег (PW) между пользователями приложения.</h4>
 <br>
-Учтены все требования из https://docs.google.com/document/d/1NMfvzJq173mqQwrMq5-s5PqQ-c6kZE1ZqhTbruGsv80/edit.
-<br>
-Написан небольшой сервер для обработки запросов (login, register, transaction, history).
-Папка node_modules не залита, все в package.json
+Написан небольшой сервер для обработки запросов на Node (login, register, transaction, history).
+Папка node_modules не залита
 <br>
 Несколько скринов проекта:
 <ul>
